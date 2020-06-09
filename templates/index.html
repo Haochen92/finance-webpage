@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<!-- Displays portfolio -->
+
+<table align="center" border=1 bgcolor=0xff0fff cellpadding = 10>
+    <tr>
+        <td>Symbol</td>
+        <td>Shares</td>
+        <td>Price</td>
+        <td>Total</td>
+    </tr>
+        {% for row in portfolio %}
+    <tr>
+        <td>{{row[0]}}</td>
+        <td>{{row[1]}}</td>
+        <td>{{row[2]}}</td>
+        <td>{{row[3]}}</td>
+    </tr>
+        {% endfor %}
+</table>
+<table align="center" cellpadding = 10>
+    <tr><td>Cash Balance</td><td>{{cash}}</td></tr>
+    <tr><td>Total Assets</td><td>{{grand_total}}</td></tr>
+</table>
+{% endblock %}
